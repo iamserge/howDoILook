@@ -1,7 +1,10 @@
 <template name="Vote">
-  <div class="vote">
-  	<h1>Vote for look {{ getLookId }}</h1>
-   	<button id="yes">Yes</button>
-   	<button id="no">No</button>
+  <div class="vote videoContainer">
+  	<div id="myVideo" muted="true" class="lookVideo" autoplay></div>
+  	<div class="info">
+	  	<h1>Vote for look {{ getLookId }}</h1>
+	   	<button id="yes">Yes</button>
+	   	<button id="no">No</button>
+	</div>
   </div>
 </template>

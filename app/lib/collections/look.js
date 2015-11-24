@@ -9,6 +9,9 @@ looks = new Mongo.Collection('looks', {
         yesVotes: {
             type: Number
         },
+        peerId: {
+            type: String
+        },
         noVotes: {
              type: Number
         }
@@ -21,6 +24,7 @@ if (Meteor.isServer) {
         generateNewLook: function() {
             var look = {
                 username: 'anonymous',
+                peerId: '',
                 yesVotes: 0,
                 noVotes: 0
             };
@@ -30,9 +34,17 @@ if (Meteor.isServer) {
                 _id: lookId
             };
         },
+        updateLookPeerId: function(attributes){
+            check(attributes._id, String);
+            check(attributes.peerId, String);
+            console.log(attributes.peerId);
+            looks.update({_id: attributes._id},{ $set: {peerId: attributes.peerId}});
+            return {
+                _id: attributes._id
+            }
 
+        },
         addYesVoteToLook: function(_id) {
-            console.log(_id);
             check(_id, String);
             looks.update({_id: _id},{'$inc': {'yesVotes' : 1}});
             return {

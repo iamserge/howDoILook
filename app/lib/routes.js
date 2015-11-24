@@ -13,4 +13,9 @@ Router.route('/', function () {
 
 Router.route('/vote/:lookId', function () {
 	this.render('Vote');
+}, {
+	name: 'votePage',
+	waitOn: function(){
+		return Meteor.subscribe('getLookById', this.params.lookId);
+	}
 });

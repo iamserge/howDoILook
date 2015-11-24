@@ -1,5 +1,25 @@
 /*****************************************************************************/
 /* main: Style */
 /*****************************************************************************/
-.main {
+@import "{wolves:bourbon}/bourbon";
+@import "{wolves:bitters}/base";
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700);
+
+
+.videoContainer {
+	width: 700px;
+	margin: 0 auto;
+	overflow: hidden;
 }
+
+#myVideo {
+	float: left;
+	video {
+	    width: 300px;
+	}
+}
+.info {
+	width: 370px;
+	float: right;
+}
+
