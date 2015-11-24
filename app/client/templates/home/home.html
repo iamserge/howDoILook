@@ -1,0 +1,12 @@
+<template name="Home">
+  <div class="home">
+    <button id="newLook">Get new look</button>
+    {{#if newLook}}
+    	{{#with newLook}}
+		    <h2><a href="/vote/{{ _id }}" target="blank_">{{ _id }}</a></h2>
+		    <p>Yes votes:{{ yesVotes }}</p>
+		    <p>No votes: {{ noVotes }}</p>
+		{{/with}}
+	{{/if}}
+  </div>
+</template>
