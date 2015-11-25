@@ -47,3 +47,9 @@ Router.route('/myVideos/:userId', function () {
 {
 	name : 'myVideos.show'
 });
+
+Router.route('/voicetest', function () {
+
+	this.render('voicetest');
+
+});
