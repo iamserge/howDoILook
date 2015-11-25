@@ -19,3 +19,9 @@ Router.route('/vote/:lookId', function () {
 		return Meteor.subscribe('getLookById', this.params.lookId);
 	}
 });
+
+Router.route('/voicetest', function () {
+
+	this.render('voicetest');
+
+});
