@@ -116,7 +116,7 @@ Template.voicetest.rendered = function () {
 	        error("");
 	        setTimeout(function(){
 	        	mic.stop();
-	        },5000);
+	        },4000);
 	      };
 	      mic.onaudioend = function () {
 	        info("Recording stopped, processing started");
