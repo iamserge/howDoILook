@@ -5,6 +5,10 @@
     	<div>
     		<h1>Your Look:</h1>
     	</div>
+    		<center><div id="microphone"></div></center>
+	    <pre id="result"></pre>
+	    <div id="info"></div>
+	    <div id="error"></div>
 		    <div id="myVideo" class="myVideo" ></div>
 		    <div class="info">
 
@@ -23,7 +27,14 @@
 
 	{{/if}}
 	<video id="detectionVideo" preload autoplay loop muted ></video>
-
-
+	<div class="button-container">
+    	<button id="stream">Stream</button>
+    	<button id="record">Record</button>
+    </div>
+	<div id="microphone"></div>
+    <pre id="result"></pre>
+    <div id="info"></div>
+    <div id="error"></div>
+    <div id="streamingConfirmation"></div>
   </div>
 </template>

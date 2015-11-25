@@ -101,7 +101,10 @@ var goToStreamingPage = function(e) {
 Template.voicetest.rendered = function () {
 		var micBtn = document.getElementById("microphone");
 		var errors = 0;
-   	    var mic = new Wit.Microphone(micBtn);
+		var resetErrors = function() {
+			errors = 0;
+		};
+   	    mic = new Wit.Microphone(micBtn);
 	      var info = function (msg) {
 	        document.getElementById("info").innerHTML = msg;
 	      };
@@ -146,38 +149,46 @@ Template.voicetest.rendered = function () {
 		    }
 
 	        var voiceChoice = 2;
-	        
+	        var streamVideo = function() {
+	        	// stream video
+	        };
+
 	        switch (r) {
 	        	case 'intent=how_do_I_look':
 			        var firstResponseMsg = new SpeechSynthesisUtterance('I think you look great. Do you want to stream publicly on our site, stream privately to your friends, or record for later?');
 					firstResponseMsg.voice = speechSynthesis.getVoices()[voiceChoice];
 					speechSynthesis.speak(firstResponseMsg);
+					resetErrors();
 					setTimeout(function(){micBtn.click();}, 8000);
 					break;
 				case 'intent=stream_live':
 					var streamLiveMsg = new SpeechSynthesisUtterance('Great, let\'s show everyone how good you look!');
 					streamLiveMsg.voice = speechSynthesis.getVoices()[voiceChoice];
 					speechSynthesis.speak(streamLiveMsg);
+					resetErrors();
 					setTimeout(function(){
 						//alert('stream live: go to stream to public page');
-						goToStreamingPage();
+						streamVideo();
 					}, 4000);
 					break;
 				case 'intent=stream_to_friends':
 					var streamToFriendsMsg = new SpeechSynthesisUtterance('Okay, let\'s get a link for you to send to your friends.');
 					streamToFriendsMsg.voice = speechSynthesis.getVoices()[voiceChoice];
 					speechSynthesis.speak(streamToFriendsMsg);
+					resetErrors();
 					setTimeout(function(){
 						//alert('stream to friends: go to stream to friends page');
-						goToStreamingPage();
+						streamVideo();
 					}, 4000);
 					break;
 				case 'intent=record_for_later':
 					var recordForLaterMsg = new SpeechSynthesisUtterance('Cool, let\'s record a video you can view or show people later');
 					recordForLaterMsg.voice = speechSynthesis.getVoices()[voiceChoice];
 					speechSynthesis.speak(recordForLaterMsg);
+					resetErrors();
 					setTimeout(function(){
-						alert('record for later: go to record for later page');
+						//alert('record for later: go to record for later page');
+						window.location = 'localhost:3000/record';
 					}, 4000);
 					break;
 				default:
@@ -194,10 +205,10 @@ Template.voicetest.rendered = function () {
 	      };
 	      mic.onerror = function (err) {
 	        error("Error: " + err);
-	        errors++;
+	        /*errors++;
 	        if (errors < 2) {
 	        	mic.onresult();
-	        };
+	        };*/
 	      };
 	      mic.onconnecting = function () {
 	        info("Microphone is connecting");
