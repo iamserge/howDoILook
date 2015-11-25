@@ -24,7 +24,9 @@ h1 {
 	overflow: hidden;
 	width: 800px;
 }
-
+#detectionVideo {
+	visibility: hidden;
+}
 #myVideo {
 	video {
 		border: 5px solid #111;
@@ -32,6 +34,10 @@ h1 {
 		display: block;
 		margin: 0 auto;
 	    width: 400px;
+	}
+	.rect {
+		position: absolute;
+		border: 2px solid red;
 	}
 }
 .info {

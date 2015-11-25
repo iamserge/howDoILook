@@ -1,0 +1,18 @@
+<template name="voicetest">
+  <div class="home videoContainer">
+   
+		<link rel="stylesheet" href="microphone/microphone.min.css">
+		<p>We think you look gorgeous, but ask your friends by saying "How Do I Look?", or click the button below.</p>
+		<button id="newLook">How do I look?</button>
+		<center><div id="microphone"></div></center>
+	    <pre id="result"></pre>
+	    <div id="info"></div>
+	    <div id="error"></div>
+
+	<div id="myVideo" class="myVideo" ></div>
+		    <div class="info">
+		    	<h2>Look id: <a href="/vote/{{ _id }}" target="blank_">{{ _id }}</a></h2>
+			    <canvas id="yesNoChart" width="100" height="400"></canvas>
+			</div>
+  </div>
+</template>
