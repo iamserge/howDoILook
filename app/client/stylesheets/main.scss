@@ -11,11 +11,17 @@
 	margin: 0 auto;
 	overflow: hidden;
 }
-
+#detectionVideo {
+	visibility: hidden;
+}
 #myVideo {
 	float: left;
 	video {
 	    width: 300px;
+	}
+	.rect {
+		position: absolute;
+		border: 2px solid red;
 	}
 }
 .info {

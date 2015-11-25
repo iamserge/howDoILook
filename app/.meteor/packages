@@ -26,3 +26,7 @@ fds:webrtc
 wolves:bourbon
 wolves:bitters
 chart:chart
+cfs:standard-packages
+cfs:gridfs
+cfs:filesystem
+steeve:jquery-qrcode
