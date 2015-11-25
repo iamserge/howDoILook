@@ -34,6 +34,16 @@ Router.route('/signUp/:urlId', function () {
 	this.render('SignUp');
 });
 
+Router.route('/signOut', function () {
+	var self = this;
+
+	Meteor.logout(function(err){
+		if (typeof err === 'undefined'){
+			self.render('SignOut');
+		}
+	});
+});
+
 Router.route('/myVideos/:userId', function () {
 	var userId = Meteor.userId();
 
