@@ -24,6 +24,15 @@
 		}
 	}
 
+	#myVideo {
+		video {
+			border: 5px solid #111;
+			border-radius: 25%;
+			display: block;
+			margin: 0 auto;
+		    width: 400px;
+		}
+	}
 
 	.votes {
 		position: absolute;
