@@ -26,11 +26,11 @@ Router.route('/vote/:lookId', function () {
 	}
 });
 
-Router.route('/signIn/:urlId', function () {
+Router.route('/signIn/:videoId', function () {
 	this.render('SignIn');
 });
 
-Router.route('/signUp/:urlId', function () {
+Router.route('/signUp/:videoId', function () {
 	this.render('SignUp');
 });
 
@@ -62,6 +62,8 @@ Router.route('/video/:videoId',function(){
 	Meteor.subscribe('getVideoById',this.params.videoId);
 	
 	this.render('video');
+},{
+	name : 'video.show'
 });
 
 Router.route('/voicetest', function () {

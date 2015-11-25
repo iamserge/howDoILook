@@ -4,8 +4,9 @@ Template.video.rendered = function(){
 
 	var videoElem = document.getElementById('mainVideo'),
 		videoBlob = Videos.findOne({_id: videoId});
+	console.log(videoElem,videoBlob);
 // console.log(videoBlob);
-	videoElem.src = window.URL.createObjectURL(videoBlob.data.blob);
+	videoElem.src = window.URL.createObjectURL(videoBlob);
 // console.log('b');
 };
 

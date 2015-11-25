@@ -32,6 +32,6 @@ Template.signUp.events({
 
 Template.signUp.helpers({
 	'getUrlId': function(){
-		return Router.current().params.urlId;
+		return Router.current().params.videoId;
 	}
 });
