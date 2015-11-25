@@ -100,9 +100,7 @@ var mic = new Wit.Microphone(micBtn);
 
 Template.Home.rendered = function(){
 	videoTracking();
-	//console.log('rendered');
 
-	
 	var errors = 0;
 	var resetErrors = function() {
 		errors = 0;
@@ -229,15 +227,15 @@ Template.Home.rendered = function(){
         }
         return k + "=" + v + "\n";
       }
+	console.log('rendered');
+};
 
-}
+
 Template.Home.helpers({
 	'newLook' : function(){
 		newLookDeps.depend();
 		return looks.findOne({_id: newLookId});
 	}
-
-
 });
 
 Template.Home.events({

@@ -17,7 +17,7 @@ Template.signIn.events({
 				if (typeof err === 'undefined'){
 					// Success
 					console.log('User logged in');
-					Router.go('myVideos.show',{userId:Meteor.userId()});
+					Router.go('video.show',{videoId:Router.current().params.videoId});
 				} else {
 					// Error
 					console.log('Error',err);				
@@ -29,6 +29,6 @@ Template.signIn.events({
 
 Template.signIn.helpers({
 	'getUrlId': function(){
-		return Router.current().params.urlId;
+		return Router.current().params.videoId;
 	}
 });
