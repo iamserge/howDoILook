@@ -85,9 +85,11 @@ var newLookId = false,
 		
 	},
 	updateChart = function(newValues){
+
 		console.log(newValues);
 		var barToUpdate = (typeof newValues.yesVotes != 'undefined') ? 0 : 1;
 		yesNoChart.datasets[0].bars[barToUpdate].value = newValues[(barToUpdate == 0)? 'yesVotes' : 'noVotes'];
+
 	}
 
 Template.Home.rendered = function(){
