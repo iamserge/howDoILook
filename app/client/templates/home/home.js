@@ -85,8 +85,14 @@ var newLookId = false,
 		yesNoChart = new Chart(ctx).Bar(data, options);
 	},
 	updateChart = function(newValues){
-		var barToUpdate = (typeof newValues.yesVotes != 'undefined') ? 0 : 1;
-		yesNoChart.datasets[0].bars[barToUpdate].value = newValues[(barToUpdate == 0)? 'yesVotes' : 'noVotes'];
+		console.log(newValues.yesVotes||newValues.noVotes);
+		var votesKey = (typeof newValues.yesVotes != 'undefined') ? 'yesVotes' : 'noVotes',
+			value = newValues[votesKey],
+			$votesCircle = $('.' + votesKey);
+			
+	
+		$votesCircle.text(value);
+		$votesCircle.css('height', value * 10).css('width', value * 10);
 	}
 
 Template.Home.rendered = function(){

@@ -2,14 +2,22 @@
   <div class="home videoContainer">
     {{#if newLook}}
     	{{#with newLook}}
+    	<div>
+    		<h1>Your Look:</h1>
+    	</div>
 		    <div id="myVideo" class="myVideo" ></div>
 		    <div class="info">
-		    	<h2>Look id: <a href="/vote/{{ _id }}" target="blank_">{{ _id }}</a></h2>
+		    	<h2>What do your friends think: <a href="/vote/{{ _id }}" target="blank_">{{ _id }}</a></h2>
 			    <canvas id="yesNoChart" width="100" height="400"></canvas>
 			</div>
+			<div class="yesVotes votes"></div>
+			<div class="noNotes votes"></div>
 		{{/with}}
 	{{ else }}
-		<button id="newLook">How do I look?</button>
+		<div class="button-container">
+			<span class="fa fa-microphone fa-5x"></span>
+			<button id="newLook"> "How do I look?"</button>
+		</div>
 	{{/if}}
   </div>
 </template>
