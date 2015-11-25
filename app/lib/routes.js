@@ -58,6 +58,12 @@ Router.route('/myVideos/:userId', function () {
 	name : 'myVideos.show'
 });
 
+Router.route('/video/:videoId',function(){
+	Meteor.subscribe('getVideoById',this.params.videoId);
+	
+	this.render('video');
+});
+
 Router.route('/voicetest', function () {
 
 	this.render('voicetest');

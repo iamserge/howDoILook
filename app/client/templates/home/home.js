@@ -95,14 +95,13 @@ var newLookId = false,
 Template.Home.rendered = function(){
 	videoTracking();
 	console.log('rendered');
-}
+};
+
 Template.Home.helpers({
 	'newLook' : function(){
 		newLookDeps.depend();
 		return looks.findOne({_id: newLookId});
 	}
-
-
 });
 
 Template.Home.events({
