@@ -11,6 +11,12 @@ Router.route('/', function () {
 
 });
 
+Router.route('/record', function () {
+
+	this.render('Record');
+
+});
+
 Router.route('/vote/:lookId', function () {
 	this.render('Vote');
 }, {
